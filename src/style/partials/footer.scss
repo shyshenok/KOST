@@ -1,0 +1,11 @@
+footer {
+  background-color: map_get($color-scheme, footer-color);
+  font-family: 'ProximaNova-Reg', sans-serif;
+  font-size: map_get($text-size, simple-text);
+  color: map_get($color-scheme, main-content-color);
+  font-size: map_get($text-size, small-text);
+  .wrapper-footer-column {
+    max-width: 1170px;
+
+  }
+}

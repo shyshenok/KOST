@@ -1,0 +1,23 @@
+
+{
+  "name": "sig-site",
+  "description": "",
+  "main": "",
+  "authors": [
+    "shyshenok <shyshenoka@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "jQuery": "2.*",
+    "bootstrap": "4.0.0-beta",
+    "fontawesome": "4.7.0"
+  }
+}

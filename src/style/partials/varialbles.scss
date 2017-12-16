@@ -1,0 +1,30 @@
+$color-scheme:(
+        main-content-color: #ffffff,
+        header-color: #3d7aec,
+        text-color: #989898,
+        icons-color: #bababa,
+        footer-color: #3f3f3f,
+);
+
+$text-size:(
+        simple-text: 16px,
+        primary-text: 42px,
+        share-text: 18px,
+        news-primary-text: 20px,
+        small-text: 12px,
+        news-header: 34px,
+        secondary-text: 14px
+);
+
+@font-face {
+  font-family: FuturaPT-Demi;
+  src: url('../../fonts/FuturaPT-Demi.woff');
+}
+@font-face {
+  font-family: ProximaNova-Reg;
+  src: url('../../fonts/ProximaNovaCond-Regular.woff');
+}
+@font-face {
+  font-family: ProximaNova-Semibold;
+  src: url('../../fonts/ProximaNovaCond-Semibold.woff');
+}
