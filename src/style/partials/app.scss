@@ -1,3 +1,39 @@
+@mixin link($color, $width, $height) {
+  color: $color;
+  width: $width;
+  height: $height;
+  position: relative;
+  border: 2px solid transparent;
+  text-decoration: none;
+}
+
+@mixin after($top, $background-color) {
+  width: 0%;
+  height: 2px;
+  display: block;
+  background-color: $background-color;
+  content: " ";
+  position: absolute;
+  top: $top;
+  left: 50%;
+  transition: left 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), width 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@mixin hoverafter($top, $background-color) {
+  &::after {
+    width: 100%;
+    height: 2px;
+    display: block;
+    background-color: $background-color;
+    content: " ";
+    position: absolute;
+    top: $top;
+    left: 0;
+  }
+}
+
+
+
 * {
   box-sizing: border-box;
 }
@@ -5,24 +41,90 @@
 html, body {
   height: 100%;
   width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 a {
   cursor: pointer;
 }
 
-header,
-footer,
-main {
+.container {
+  padding: 0;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+img {
+  height: auto;
   width: 100%;
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
 }
 
-main {
+
+@media (min-width: 992px){
+  //.line {
+  //  height: auto;
+  //  position: absolute;
+  //  top: 0;
+  //  width: 1px;
+  //  background-color: map_get($color-scheme, footer-color);
+  //  bottom: 0;
+  //}
+  .line {
+    height: auto;
+    position: absolute;
+    top: 0;
+    border-right: 1px solid map_get($color-scheme, footer-color);
+    bottom: 0;
+  }
+  .one {
+    left: calc((100% - 960px) / 2);
+  }
+
+  .two {
+    left: calc((100% - 960px) / 2 + (960px * 0.265)); // 0.264 :)
+  }
+
+  .three {
+    left: calc((100% - 960px) / 2 + (960px * 0.735)); // :)
+  }
+  .four {
+    left: calc((100% - 960px) / 2 + 960px);
+  }
 }
 
-footer {
+@media (min-width: 1200px){
+  //.line {
+  //  height: auto;
+  //  position: absolute;
+  //  top: 0;
+  //  width: 1px;
+  //  background-color: map_get($color-scheme, footer-color);
+  //  bottom: 0;
+  //}
+  .line {
+    height: auto;
+    position: absolute;
+    top: 0;
+    border-right: 1px solid map_get($color-scheme, footer-color);
+    bottom: 0;
+  }
+  .one {
+    left: calc((100% - 1140px) / 2);
+  }
 
+  .two {
+    left: calc((100% - 1140px) / 2 + (1140px * 0.264)); // 0.264 :)
+  }
+
+  .three {
+    left: calc((100% - 1140px) / 2 + (1140px * 0.736)); // :)
+  }
+  .four {
+    left: calc((100% - 1140px) / 2 + 1140px);
+  }
 }

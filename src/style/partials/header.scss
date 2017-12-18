@@ -2,19 +2,33 @@ header {
   background-color: map_get($color-scheme, header-color);
   font-family: 'FuturaPT-Demi', sans-serif;
   font-size: map_get($text-size, simple-text);
-  .menu {
+
+  .navbar-collapse {
+    width: 100%;
+  }
+
+  .navbar {
     @media (min-width: 992px) {
-      width: 570px;
+      padding: 0;
     }
+
+    .navbar-toggler {
+      border: 1px solid #fff;
+    }
+
   }
   nav {
-    max-width: 1170px;
-    height: 60px;
+    min-height: 60px;
     background-color: map_get($color-scheme, header-color);
+
+    .menu {
+      @media (min-width: 992px) {
+        width: 64%;
+      }
+    }
     .logo {
       @media (min-width: 992px) {
-        padding: 0 15px;
-        width: 293px;
+        width: 35%;
       }
     }
     .phone {
@@ -22,45 +36,19 @@ header {
       flex-flow: row;
       justify-content: space-between;
       @media (min-width: 992px) {
-        width: 307px;
+        width: 36%;
       }
     }
     ul {
       li {
         .nav-link {
-          color: map_get($color-scheme, main-content-color);
-          width: auto;
-          height: 34px;
-          letter-spacing: 0.1em;
-          text-align: center;
-          font-size: 0.8rem;
-          margin: 10px;
-          position: relative;
-          border: 2px solid transparent;
-
+          @include link( map_get($color-scheme, main-content-color), auto, 100%);
           &::after {
-            width: 0%;
-            height: 2px;
-            display: block;
-            background-color: map_get($color-scheme, main-content-color);
-            content: " ";
-            position: absolute;
-            top: 34px;
-            left: 50%;
-            transition: left 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), width 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+            @include after(100%, map_get($color-scheme, main-content-color));
           }
 
           &:hover {
-            &::after {
-              width: 100%;
-              height: 2px;
-              display: block;
-              background-color: map_get($color-scheme, main-content-color);
-              content: " ";
-              position: absolute;
-              top: 34px;
-              left: 0;
-            }
+            @include hoverafter(100%, map_get($color-scheme, main-content-color));
           }
         }
         .curret {
